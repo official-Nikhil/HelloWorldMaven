@@ -1,5 +1,15 @@
 pipeline { 
     agent any 
+	
+    tools {
+        jdk 'jdk8'                     // This should match your JDK name in Jenkins
+        maven 'apache-maven-3.6.0'     // This should match your Maven name
+    }
+
+    environment {
+        JAVA_HOME = tool 'jdk8'
+        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Build') { 
             steps {
