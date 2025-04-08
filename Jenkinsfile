@@ -19,7 +19,7 @@ pipeline {
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarserver') {
-                    sh 'sonar-scanner -Dsonar.projectKey=myProject -Dsonar.sources=./src'
+                    sh '/var/lib/jenkins/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.projectKey=myProject -Dsonar.sources=./src'
                 }
             }
         }
