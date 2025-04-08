@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'java 17'  // 👈 This must match what you named it in Global Tool Configuration
+        jdk 'java17'  // 👈 This must match what you named it in Global Tool Configuration
     }
 
     environment {
