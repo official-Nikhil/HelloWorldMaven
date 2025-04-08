@@ -18,7 +18,7 @@ pipeline {
         }
         stage('build && SonarQube analysis') {
             steps {
-                withSonarQubeEnv('sonar.tools.devops.****') {
+                withSonarQubeEnv('sonarserver') {
                     sh 'sonar-scanner -Dsonar.projectKey=myProject -Dsonar.sources=./src'
                 }
             }
